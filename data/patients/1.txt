@@ -1,3 +1,0 @@
-Doctor: abc
-Diagnosis: Brain rotting
-
