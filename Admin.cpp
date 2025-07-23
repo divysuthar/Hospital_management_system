@@ -1,16 +1,17 @@
 #include "Admin.h"
-#include <iostream>
-#include <fstream>
+#include <bits/stdc++.h>
 using namespace std;
 
-Admin::Admin() {
+Admin::Admin()
+{
     cout << "Enter Admin Username: ";
     cin.ignore();
     getline(cin, username);
-    password = "admin";  // demo
+    password = "admin"; // demo
 }
 
-void Admin::addPatient() {
+void Admin::addPatient()
+{
     Patient p;
     ofstream file("data/patients/" + p.patientID + ".txt");
     file << "Name: " << p.name << "\nAge: " << p.age << "\nDisease: " << p.disease << "\n";
@@ -18,7 +19,8 @@ void Admin::addPatient() {
     cout << "Patient record created successfully.\n";
 }
 
-void Admin::modifyPatientRecord() {
+void Admin::modifyPatientRecord()
+{
     string id;
     cout << "Enter Patient ID to Modify: ";
     getline(cin, id);
@@ -31,27 +33,38 @@ void Admin::modifyPatientRecord() {
     cout << "Record updated.\n";
 }
 
-void Admin::viewAllAppointments() {
+void Admin::viewAllAppointments()
+{
     ifstream file("data/appointments.txt");
     string line;
     cout << "--- All Appointments ---\n";
-    while (getline(file, line)) {
+    while (getline(file, line))
+    {
         cout << line << endl;
     }
     file.close();
 }
 
-void Admin::showMenu() {
+void Admin::showMenu()
+{
     int choice;
-    do {
+    do
+    {
         cout << "\nAdmin Menu:\n";
         cout << "1. Add New Patient\n2. Modify Patient Record\n3. View All Appointments\n4. Exit\nChoice: ";
         cin >> choice;
         cin.ignore();
-        switch (choice) {
-            case 1: addPatient(); break;
-            case 2: modifyPatientRecord(); break;
-            case 3: viewAllAppointments(); break;
+        switch (choice)
+        {
+        case 1:
+            addPatient();
+            break;
+        case 2:
+            modifyPatientRecord();
+            break;
+        case 3:
+            viewAllAppointments();
+            break;
         }
     } while (choice != 4);
 }

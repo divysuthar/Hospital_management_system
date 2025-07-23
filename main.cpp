@@ -12,7 +12,7 @@ void loginMenu() {
     cout << "1. Patient\n2. Doctor\n3. Admin\n4. Exit\nChoice: ";
     cin >> choice;
 
-    User* user = nullptr;
+    User* user = NULL;
 
     switch (choice) {
         case 1:
