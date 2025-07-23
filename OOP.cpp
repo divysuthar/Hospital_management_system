@@ -18,10 +18,9 @@ private:
 
 public:
     static int totalAppointments;
-    Appointment() {}
     Appointment(string pid, string doc, string d, string t)
     {
-        patientID = pid, doctorName = doc, date = d, time = t;
+        this->patientID = pid, this->doctorName = doc, this->date = d, this->time = t;
         totalAppointments++;
     }
     void saveToFile()
@@ -44,8 +43,8 @@ public:
     Patient() {}
     Patient(string pid, string n, int a, string d)
     {
-        patientID = pid, age = a, disease = d;
-        name = n;
+        this->patientID = pid, this->age = a, this->disease = d;
+        name = n;   
     }
     void bookAppointment()
     {
@@ -57,8 +56,8 @@ public:
         cin >> date;
         cout << "Time (HH:MM): ";
         cin >> time;
-        Appointment appt(patientID, docName, date, time);
-        appt.saveToFile();
+        Appointment appoint(patientID, docName, date, time);
+        appoint.saveToFile();
         cout << "Appointment booked successfully!\n";
     }
     void viewMedicalHistory()
